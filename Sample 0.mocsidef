@@ -1,0 +1,6 @@
+trials=2048
+random X=Range(-5,5)
+record var R=X
+record var A=2*X
+var B=2+A
+record var C=B/2

@@ -1,0 +1,38 @@
+#The format for a Monte Carlo Simulation Description File (MoCSiDeF) file (.mocsidef)
+
+#To avoid circular dependancies, variables can only be referenced after they have been defined
+#    Therefore, the order of random and calculated variable definition is important
+#Empty lines and lines beginning with a '#' are ignored
+#There should be no spaces during a variable definition/expression
+#    Therefore, when splitting a line by the space character, the variable definition/expression should be the last element
+#Variable names can be strings of 1 or more characters (they are allowed to not be a single letter)
+#Variable names must only consist of alphabetical characters
+
+#A comment line
+
+#The number of trials that should be run for the simulation. Only one version of this line should exist in the file
+trials=128
+
+#A binomially-distributed random variable called X with 20 trials and probability of success of 0.2
+random X=B(20,0.2)
+
+#Valid random variables:
+#    Range(a,b) -> a uniformly-distributed variable that can take integer values in the range [a,b]
+#		a and b must be integers and a must be lesser than or equal to b
+#    B(n,p) -> binomially-distributed variable with 'n' trials and 'p' probability of success
+
+#A variable called A which contains double the value of X
+var A=2*X
+
+#A variable called B which contains 1 more than the value of A where B should be recorded as a result of the simulation
+record var B=A+1
+
+#A variable that uses X, A and B
+var C=A*2+B-X
+
+#Valid algebraic operations:
+#    + -> addition
+#    - -> subtraction
+#    * -> multiplication
+#    / -> division
+#    % -> modulo operator
