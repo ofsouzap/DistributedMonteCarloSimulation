@@ -1,0 +1,3 @@
+trials=1024
+random X=B(10,0.75)
+record var A=X

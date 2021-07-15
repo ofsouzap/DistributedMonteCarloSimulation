@@ -50,6 +50,7 @@
     <Compile Include="ExpressionParsing.cs" />
     <Compile Include="ExpressionTree.cs" />
     <Compile Include="ExpressionVariable.cs" />
+    <Compile Include="Maths.cs" />
     <Compile Include="MoCSiDeFParsing.cs" />
     <Compile Include="ModuloNode.cs" />
     <Compile Include="ProductNode.cs" />
